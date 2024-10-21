@@ -1,0 +1,80 @@
+#VENTAS DE FRUTAS Y VERDURAS Ingrese por teclado la cantidad de ventas a realizar.  
+
+
+# Nombre del Vendedor 
+# Apellido del Vendedor 
+# Nombre del Cliente 
+# Apellido del Cliente 
+# Cantidad que va a comprar el cliente (en kgs) 
+# Fruta que va a comprar el usuario 
+# Precio de la fruta (en pesos chilenos, por kilo) 
+# Con cuanto pago el Cliente 
+# FUNCIÓN: Calcular Total a Pagar 
+# FUNCIÓN: Calcular Vuelto 
+# FUNCIÓN: Calcular Nombre Completo
+
+
+print("hello word")
+
+def calcular_total(cantidad_kilos, precio_kilos):
+    return cantidad_kilos * precio_kilos
+
+def calculo_vuelto(precio_pagado, precio_por_pagar):
+    return precio_pagado - precio_por_pagar
+
+
+
+def nombre_completo (nombre, apellido):
+    return f"{nombre} {apellido}"
+
+ventas_por_hacer = int(input("Cuantas ventas realizara: "))
+
+
+    #inicio
+
+for i in range (ventas_por_hacer):
+        print("Venta #{i + 1}:")
+
+        print("")
+        print("")
+
+        print (" A continuacion su nombre completo")     
+        nom_cliente = input("Ingrese su nombre: ")
+        apellido_clie = input("Ingrese su apeliido: ")
+
+        print("")
+            
+        print (" A continuacion ingrese el nombre completo del vendedor")     
+        nom_cajero = input("Ingrese el nombre: ")
+        apellido_caj = input("Ingrese el apeliido: ")
+
+        fruta_o_verdura = input("Que fruta o verdura va a comprar?: ")
+
+        cantidad_kilos = int(input("Cuantos kilos llevara: "))
+
+        precio_kilos = int(input(f"Ingrese el precio del producto: "))
+
+        precio_pagado = int(input("Con cuanto pagara?: "))
+
+
+        precio_por_pagar = calcular_total(cantidad_kilos, precio_kilos )
+
+        vuelto = calculo_vuelto(precio_pagado, precio_por_pagar)
+        print("")
+        print("")
+
+        #fin
+
+        print("Resumen de la venta")
+        print("")
+
+        print(f"El vendedor fue {nom_cajero}")
+        print(f"El cliente fue {nom_cliente}")
+        print(f"Lo que compro fue {fruta_o_verdura}")
+        print(f"Compro {cantidad_kilos} kilo de {fruta_o_verdura} ")
+        print(f"El total a pagar fue {precio_por_pagar} pesos")
+        print(f"el cliente {nom_cliente} pago con {precio_pagado} pesos")
+        if  vuelto >= 0:
+            print(f"El vuelto es de : {vuelto} pesos")
+        else:
+            print (f"El cliente aun debe pagar {abs(vuelto)} pesos")
